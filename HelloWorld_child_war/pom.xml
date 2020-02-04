@@ -8,7 +8,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
   <groupId>com.howtodoinjava</groupId>
-  <artifactId>HelloWorld_child_war</artifactId>
+  <artifactId>HelloWorld</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>HelloWorld_child_war Maven Webapp</name>

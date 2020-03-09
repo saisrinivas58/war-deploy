@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "variables": {},
+    "resources": [
+        {
+            "name": "MyTroficManager",
+            "type": "Microsoft.Network/trafficManagerProfiles",
+            "apiVersion": "2017-05-01",
+            "tags": {},
+            "location": "global",
+            "properties": {
+                "profileStatus": "Enabled",
+                "trafficRoutingMethod": "Performance",
+                "dnsConfig": {
+                    "relativeName": "dnsConfig",
+                    "ttl": 30
+                },
+                "monitorConfig": {
+                    "protocol": "HTTP",
+                    "port": 80,
+                    "path": "path",
+                    "intervalInSeconds": 30,
+                    "timeoutInSeconds": 5,
+                    "toleratedNumberOfFailures": 3
+                },
+                "endpoints": [
+                    {
+                        "properties": {
+                            "targetResourceId": "",
+                            "endpointStatus": "Enabled",
+                            "weight": 100,
+                            "priority": 1
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "outputs": {}
+}
